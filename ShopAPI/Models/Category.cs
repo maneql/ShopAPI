@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShopAPI.Models
@@ -6,8 +7,7 @@ namespace ShopAPI.Models
     public class Category
     {
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
-        [Column(Order = 1)]
-        public int Category_Id { get; set; }
+        public int Id { get; set; }
 
         public string Category_Name { get; set; }
 
@@ -15,5 +15,6 @@ namespace ShopAPI.Models
 
         public string Category_Content { get; set; }
 
+        public virtual IEnumerable<Category> Categorys { get; set; }
     }
 }

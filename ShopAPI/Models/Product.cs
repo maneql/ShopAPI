@@ -12,9 +12,10 @@ namespace ShopAPI.Models
 
         public string Product_Alias { get; set; }
 
-        [ForeignKey("Categories")]
-        [Column(Order = 1)]
         public int Category_Id { get; set; }
+
+        [ForeignKey("Category_Id")]
+        public virtual Category Category { get; set;  }
 
         public int Product_Cost { get; set; }
 

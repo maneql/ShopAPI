@@ -11,9 +11,10 @@ using System;
 namespace ShopAPI.Migrations
 {
     [DbContext(typeof(ObjectContext))]
-    partial class ObjectContextModelSnapshot : ModelSnapshot
+    [Migration("20170927094502_ProductAPI")]
+    partial class ProductAPI
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

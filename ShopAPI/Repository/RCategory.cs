@@ -32,14 +32,14 @@ namespace ShopAPI.Repository
 
         public async Task<Category> Get(int id)
         {
-            return await _context.Categorys.FirstOrDefaultAsync(c => c.Category_Id == id);
+            return await _context.Categorys.FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<bool> Remove(int id)
         {
             try
             {
-                var cate = await _context.Categorys.SingleOrDefaultAsync(c => c.Category_Id == id);
+                var cate = await _context.Categorys.SingleOrDefaultAsync(c => c.Id == id);
                 _context.Categorys.Remove(cate);
                 await _context.SaveChangesAsync();
                 return true;
@@ -66,7 +66,7 @@ namespace ShopAPI.Repository
             }
             catch
             {
-                var cate = await _context.Categorys.FindAsync(category.Category_Id);
+                var cate = await _context.Categorys.FindAsync(category.Id);
                 return cate;
             }
         }
