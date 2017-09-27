@@ -1,0 +1,11 @@
+C:\Users\lpnam\source\repos\ShopAPI\ShopAPI\bin\Debug\netcoreapp2.0\ShopAPI.deps.json
+C:\Users\lpnam\source\repos\ShopAPI\ShopAPI\bin\Debug\netcoreapp2.0\ShopAPI.runtimeconfig.json
+C:\Users\lpnam\source\repos\ShopAPI\ShopAPI\bin\Debug\netcoreapp2.0\ShopAPI.runtimeconfig.dev.json
+C:\Users\lpnam\source\repos\ShopAPI\ShopAPI\bin\Debug\netcoreapp2.0\ShopAPI.dll
+C:\Users\lpnam\source\repos\ShopAPI\ShopAPI\obj\Debug\netcoreapp2.0\ShopAPI.csprojResolveAssemblyReference.cache
+C:\Users\lpnam\source\repos\ShopAPI\ShopAPI\obj\Debug\netcoreapp2.0\ShopAPI.csproj.CoreCompileInputs.cache
+C:\Users\lpnam\source\repos\ShopAPI\ShopAPI\obj\Debug\netcoreapp2.0\ShopAPI.AssemblyInfoInputs.cache
+C:\Users\lpnam\source\repos\ShopAPI\ShopAPI\obj\Debug\netcoreapp2.0\ShopAPI.AssemblyInfo.cs
+C:\Users\lpnam\source\repos\ShopAPI\ShopAPI\bin\Debug\netcoreapp2.0\ShopAPI.pdb
+C:\Users\lpnam\source\repos\ShopAPI\ShopAPI\obj\Debug\netcoreapp2.0\ShopAPI.dll
+C:\Users\lpnam\source\repos\ShopAPI\ShopAPI\obj\Debug\netcoreapp2.0\ShopAPI.pdb
