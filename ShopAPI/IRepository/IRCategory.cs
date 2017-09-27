@@ -12,9 +12,9 @@ namespace ShopAPI.IRepository
 
         Task<Category> Get(int id);
 
-        Task<Category> Add(Category chucvu);
+        Task<Category> Add(Category category);
 
-        Task<Category> Update(Category chucvu);
+        Task<Category> Update(Category category);
 
         Task<bool> Remove(int id);
 

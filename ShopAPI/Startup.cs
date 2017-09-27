@@ -29,8 +29,9 @@ namespace ShopAPI
         {
             services.AddMvc();
             services.AddDbContext<ObjectContext>(options =>
-             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IRCategory, RCategory>();
+            services.AddTransient<IRProduct, RProduct>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
