@@ -6,7 +6,6 @@ namespace ShopAPI.Models
     public class Category
     {
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
-        [Column(Order = 1)]
         public int Category_Id { get; set; }
 
         public string Category_Name { get; set; }

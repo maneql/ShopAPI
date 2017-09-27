@@ -12,8 +12,6 @@ namespace ShopAPI.Models
 
         public string Product_Alias { get; set; }
 
-        [ForeignKey("Categories")]
-        [Column(Order = 1)]
         public int Category_Id { get; set; }
 
         public int Product_Cost { get; set; }
