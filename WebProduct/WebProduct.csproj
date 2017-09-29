@@ -66,9 +66,27 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\myApp.js" />
+    <Content Include="Content\Boostrap\css\bootstrap-grid.css" />
+    <Content Include="Content\Boostrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\Boostrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\Boostrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\Boostrap\css\bootstrap.css" />
+    <Content Include="Content\Boostrap\css\bootstrap.min.css" />
+    <Content Include="Content\Boostrap\js\bootstrap.js" />
+    <Content Include="Content\Boostrap\js\bootstrap.min.js" />
+    <Content Include="Content\JS\angular-route.js" />
+    <Content Include="Content\JS\angular.min.js" />
+    <Content Include="Content\JS\bootstrap.js" />
     <Content Include="Content\languages\de.json" />
     <Content Include="Content\languages\en.json" />
     <Content Include="Content\languages\vi.json" />
+    <Content Include="Content\Boostrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\Boostrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\Boostrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\Boostrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\Boostrap\css\bootstrap.css.map" />
+    <Content Include="Content\Boostrap\css\bootstrap.min.css.map" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -86,16 +104,22 @@
     <Content Include="Content\JS\angular-translate-storage-cookie-2.15.2.js" />
     <Content Include="Content\JS\angular-translate-storage-local-2.15.2.js" />
     <Content Include="Content\JS\jquery-3.2.1.js" />
+    <Content Include="Controllers\CategoryController.js" />
     <Content Include="i18n\angular-locale_de.js" />
     <Content Include="i18n\angular-locale_en.js" />
     <Content Include="i18n\angular-locale_fr.js" />
     <Content Include="i18n\angular-locale_vi.js" />
     <Content Include="Index.html" />
+    <Content Include="Services\CategoryService.js" />
+    <Content Include="Services\ProductService.js" />
+    <Content Include="Views\Category.html" />
+    <Content Include="Views\Main.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

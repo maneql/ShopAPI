@@ -3,80 +3,34 @@
 <head>
     <title>Angular Test</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="Content/CSS/bootstrap-4.0.0.css">
+
+    <link href="Content/Boostrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="Content/JS/angular.min.js"></script>
+    <script src="Content/JS/angular-route.js"></script>
     <script src="Content/JS/jquery-3.2.1.js"></script>
-    <script src="Content/JS/angular-1.6.5.js"></script>
-    <script src="Content/JS/angular-cookies-1.6.5.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="Content/Boostrap/js/bootstrap.min.js"></script>
+    
+    <!--<script src="Content/JS/angular-cookies-1.6.5.js"></script>
     <script src="Content/JS/angular-translate-2.15.2.js"></script>
     <script src="Content/JS/angular-translate-loader-static-files-2.15.2.js"></script>
     <script src="Content/JS/angular-translate-storage-cookie-2.15.2.js"></script>
-    <script src="Content/JS/angular-translate-storage-local-2.15.2.js"></script>
-    <script>
-		var app = angular.module('myApp', ['ng', 'ngCookies', 'pascalprecht.translate']);
-		app.config([
-			'$translateProvider',
-			function translationConfigFn($translateProvider) {
-				$translateProvider.useStaticFilesLoader({
-				prefix: 'Content/languages/',
-				suffix: '.json'
-				});
-				$translateProvider.useLocalStorage();
-				$translateProvider.preferredLanguage('en');
-			}
-		]);
+    <script src="Content/JS/angular-translate-storage-local-2.15.2.js"></script>-->
+ 
+    
+    <!-- App -->
+    <script src="App/myApp.js"></script>
 
-		app.controller('appCtrl', [
-			'$scope', '$translate',
-			function($scope, $translate) {
-				$scope.changeLanguage = function changeLangFn(langKey) {
-					$translate.use(langKey);
-					localStorage.setItem("NG_TRANSLATE_LANG_KEY", langKey);
-					window.location.reload(false);
-				};
-				$scope.langs = localStorage.getItem("NG_TRANSLATE_LANG_KEY");
-			}
-		]);
+    <script src="Services/CategoryService.js"></script>
+    <script src="Controllers/CategoryController.js"></script>
 
-
-
-    </script>
-    <script>
-		function reload_js(language) {
-			if(language){
-				$.getScript("i18n/angular-locale_"+language+".js");
-			}
-		};
-		reload_js(localStorage.getItem("NG_TRANSLATE_LANG_KEY"));
-    </script>
 </head>
-<body ng-app="myApp">
-    <div class="col-lg-12" style="margin:20px">
-        <div style="margin:20px">
-            <h2>{{'TITLE' | translate}}</h2>
-            <p>{{'FOO' | translate}}</p>
-        </div>
-        <div ng-controller="appCtrl" class="ng-scope">
-            <div class="col-lg-12">
-                <button class="btn" ng-click="changeLanguage('en')" translate="LANG_EN">English</button>
-                <button class="btn" ng-click="changeLanguage('de')" translate="LANG_DE">German</button>
-                <button class="btn" ng-click="changeLanguage('vi')" translate="LANG_VI">Vietnamese</button>
-            </div>
-            <div class="col-lg-12" style="margin:20px">
-                <select ng-model="langs" ng-change="changeLanguage(langs)">
-                    <option value="en" translate="LANG_EN"> English</option>
-                    <option value="de" translate="LANG_DE"> German</option>
-                    <option value="vi" translate="LANG_VI"> Vietnamese</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-12" style="margin:20px">
-        <div class="col-lg-12">
-            <!-- <input type="date" ng-model="mydate"/> -->
-            <!-- <div ng-bind="mydate | date: 'fullDate'"></div> -->
-            <div>{{ '1994-12-12' | date: 'fullDate'}}</div>
-            <div>{{ 100000000 | currency }}</div>
+<body ng-app="MyApp">
+    <div class="col-lg-12">
+        <div class="container">
+            <div ng-view></div>
         </div>
     </div>
 </body>

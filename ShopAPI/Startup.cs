@@ -28,6 +28,7 @@ namespace ShopAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddCors();
             services.AddDbContext<ObjectContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IRCategory, RCategory>();
@@ -41,7 +42,11 @@ namespace ShopAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
             app.UseMvc();
         }
     }
