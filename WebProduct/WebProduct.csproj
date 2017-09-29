@@ -104,7 +104,9 @@
     <Content Include="Content\JS\angular-translate-storage-cookie-2.15.2.js" />
     <Content Include="Content\JS\angular-translate-storage-local-2.15.2.js" />
     <Content Include="Content\JS\jquery-3.2.1.js" />
+    <Content Include="Content\Style.css" />
     <Content Include="Controllers\CategoryController.js" />
+    <Content Include="Controllers\ProductController.js" />
     <Content Include="i18n\angular-locale_de.js" />
     <Content Include="i18n\angular-locale_en.js" />
     <Content Include="i18n\angular-locale_fr.js" />
@@ -114,6 +116,7 @@
     <Content Include="Services\ProductService.js" />
     <Content Include="Views\Category.html" />
     <Content Include="Views\Main.html" />
+    <Content Include="Views\Product.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

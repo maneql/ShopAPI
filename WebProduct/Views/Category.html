@@ -7,13 +7,13 @@
             <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <button type="button" class="close"
+                    <!--<button type="button" class="close"
                             data-dismiss="modal">
                         <span aria-hidden="true">&times;</span>
                         <span class="sr-only">Close</span>
-                    </button>
+                    </button>-->
                     <h4 class="modal-title" id="myModalLabel">
-                        Cập nhật thông tin nhân viên
+                        Cập nhật thông tin loại hàng
                     </h4>
                 </div>
                 <!-- Modal Body -->
@@ -47,7 +47,7 @@
         </div>
     </div>
     <!-- /Modal -->
-    <div class="panel-heading">Tìm chức vụ: <input type="text" ng-model="fCate" /></div>
+    <div class="panel-heading">Tìm kiếm loại hàng: <input type="text" ng-model="fCate" /></div>
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h4 class="panel-title">THÔNG TIN LOẠI SẢN PHẨM</h4>
@@ -88,16 +88,16 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="col-lg-4">Tên loại:</div>
-                    <div class="col-lg-8"><div class="col-lg-8"><input class="form-control input-sm" type="text" ng-model="addcategory.Category_Name" /></div></div>
+                    <label>Tên loại:</label>
+                    <input class="form-control input-sm" type="text" ng-model="addcategory.Category_Name" />
                 </div>
                 <div class="col-lg-6">
-                    <div class="col-lg-4">Alias:</div>
-                    <div class="col-lg-8"><div class="col-lg-8"><input class="form-control input-sm" type="text" ng-model="addcategory.Category_Alias" /></div></div>
+                    <label>Alias:</label>
+                    <input class="form-control input-sm" type="text" ng-model="addcategory.Category_Alias" />
                 </div>
                 <div class="col-lg-6" style="margin-top: 11px">
-                    <div class="col-lg-4">Content:</div>
-                    <div class="col-lg-8"><div class="col-lg-8"><input class="form-control input-sm" type="text" ng-model="addcategory.Category_Content" /></div></div>
+                    <label>Content:</label>
+                    <input class="form-control input-sm" type="text" ng-model="addcategory.Category_Content" />
                 </div>
             </div>
             <br />

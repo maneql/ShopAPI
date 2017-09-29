@@ -11,6 +11,15 @@
         return request;
     };
 
+    var getAllCategory = function () {
+        var request = $http({
+            method: 'GET',
+            cache: false,
+            url: HostAPI + 'api/Category'
+        });
+        return request;
+    };
+
     var addProduct = function (product) {
         var request = $http({
             method: 'post',
@@ -41,9 +50,10 @@
     };
 
     return {
-        getAllP: getAllProduct,
-        addP: addProduct,
-        updateP: updateProduct,
-        deleteP: deleteProduct
+        getAll: getAllProduct,
+        add: addProduct,
+        update: updateProduct,
+        delete: deleteProduct,
+        getAllC: getAllCategory
     };
 });
