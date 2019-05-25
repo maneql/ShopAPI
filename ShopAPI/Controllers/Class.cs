@@ -7,5 +7,6 @@ namespace ShopAPI.Controllers
 {
     public class Class
     {
+        //cmnr
     }
 }
