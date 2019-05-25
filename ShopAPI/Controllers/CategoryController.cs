@@ -23,6 +23,7 @@ namespace ShopAPI.Controllers
         [HttpGet]
         public Task<string> Get()
         {
+            // test2
             return this.GetAllCategory();
         }
 
