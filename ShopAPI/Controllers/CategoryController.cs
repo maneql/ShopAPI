@@ -24,6 +24,7 @@ namespace ShopAPI.Controllers
         public Task<string> Get()
         {
             // test2
+            // abc bn
             return this.GetAllCategory();
         }
 

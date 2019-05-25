@@ -1,0 +1,158 @@
+﻿<button type="button" class="btn btn-danger" onclick="window.location.href='#!/'">Trở về</button>
+<div class="row" ng-init="GetAll();GetAllCategory();">
+    <!-- Modal -->
+    <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="margin-left:-100px;width:700px">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">
+                        Cập nhật thông tin sản phẩm
+                    </h4>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Tên sản phẩm</label>
+                        <input type="text" class="form-control" ng-model="product.Product_Name" />
+                    </div>
+                    <div class="form-group">
+                        <label>Alias</label>
+                        <input type="text" class="form-control" ng-model="product.Product_Alias" />
+                    </div>
+                    <div class="form-group">
+                        <label>Loại sản phẩm</label>
+                        <select class="form-control" ng-model="product.Category_Id">
+                            <option ng-repeat="c in cates" value="{{c.Category_Id}}">{{c.Category_Name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Giá sản phẩm</label>
+                        <input type="text" class="form-control" ng-model="product.Product_Cost" />
+                    </div>
+                    <div class="form-group">
+                        <label>Mô tả sản phẩm</label>
+                        <textarea class="form-control" ng-model="product.Product_Detail"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Hình sản phẩm</label>
+                        <input type="text" class="form-control" ng-model="product.Product_Image" />
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <input type="checkbox" class="form-control" ng-model="product.Status" />
+                    </div>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary" ng-click="Update()" data-dismiss="modal">
+                        Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal -->
+    <div class="panel-heading">Tìm kiếm sản phẩm: <input type="text" ng-model="fproduct" /></div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Danh mục sản phẩm</h4>
+        </div>
+        <div class="panel-body">
+            <table class="table table-condensed table-striped table-bordered table-hover no-margin">
+                <thead>
+                    <tr>
+                        <th>Mã sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Alias</th>
+                        <th>Loại sản phẩm</th>
+                        <th>Giá SP</th>
+                        <th>Chi tiết sản phẩm</th>
+                        <th>Hình sản phẩm</th>
+                        <th>Status</th>
+                        <th> TASK</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="p in data|filter:fproduct">
+                        <td>{{p.Product_Id}}</td>
+                        <td>{{p.Product_Name}}</td>
+                        <td>{{p.Product_Alias}}</td>
+                        <td>{{(cates | filter:{'Category_Id': p.Category_Id}:true)[0].Category_Name}}</td>
+                        <td>{{p.Product_Cost}}</td>
+                        <td>{{p.Product_Detail}}</td>
+                        <td>{{p.Product_Image}}</td>
+                        <td>{{p.Status}}</td>
+                        <td>
+                            <div class="col-lg-offset-2">
+                                <input value="Xóa" class="btn btn-warning" ng-click="Remove($index)" type="button" />
+                                <input value="Sửa" class="btn btn-info" type="button" ng-click="Edit(p,$index)" data-toggle="modal" data-target="#myModalNorm" />
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Thêm sản phẩm</h3>
+        </div>
+        <br />
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-4">Tên sản phẩm</div>
+                    <div class="col-lg-8"><input class="form-control input-sm" type="text" ng-model="addP.Product_Name" /></div>
+                </div>
+                <div class="col-lg-12" style="margin-top: 11px">
+                    <div class="col-lg-4">Alias</div>
+                    <div class="col-lg-8"><input class="form-control input-sm" type="text" ng-model="addP.Product_Alias" /></div>
+                </div>
+                <div class="col-lg-12" style="margin-top: 11px">
+                    <div class="col-lg-4">Loại sản phẩm</div>
+                    <div class="col-lg-8">
+                        <select class="form-control"
+                                ng-model="addP.Category_Id"
+                                ng-options="c.Category_Id as c.Category_Name for c in cates"></select>
+                    </div>
+                </div>
+                <div class="col-lg-12" style="margin-top: 11px">
+                    <div class="col-lg-4">Giá sản phẩm</div>
+                    <div class="col-lg-8">
+                        <input class="form-control input-sm" type="text" ng-model="addP.Product_Cost" />
+                    </div>
+                </div>
+                <div class="col-lg-12" style="margin-top: 11px">
+                    <div class="col-lg-4">Mô tả sản phẩm</div>
+                    <div class="col-lg-8">
+                        <textarea class="form-control input-sm" ng-model="addP.Product_Detail" ></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-12" style="margin-top: 11px">
+                    <div class="col-lg-4">Hình sản phẩm</div>
+                    <div class="col-lg-8">
+                        <input class="form-control input-sm" type="text" ng-model="addP.Product_Image" />
+                    </div>
+                </div>
+                <div class="col-lg-12" style="margin-top: 11px">
+                    <div class="col-lg-4">Status</div>
+                    <div class="col-lg-8">
+                        <input class="form-control input-sm" type="checkbox" ng-model="addP.Status" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-lg-offset-5">
+                    <input type="button" class="btn btn-success" style="width:80px;" ng-click="Add()" value="Thêm" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
